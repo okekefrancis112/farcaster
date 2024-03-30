@@ -1,5 +1,3 @@
-This repo is heavily inspired by and gives credit to [a-frame-in-100-lines by Zizzamia](https://github.com/Zizzamia/a-frame-in-100-lines)
-
 ## Getting Started
 
 First, run the development server:
