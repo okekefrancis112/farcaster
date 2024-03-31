@@ -13,25 +13,36 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 
   if (idAsNumber === 2) {
-    return new NextResponse(`<!DOCTYPE html><html><head>
+    return new NextResponse(`<!DOCTYPE html>
+    <html>
+    <head>
       <title> Know your CQT token </title>
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+      <form method="POST" action="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame">
+        <input type="hidden" name="id" value="7">
+        <button type="submit" name="action" value="proceed">Proceed</button>
+      </form>
+      <form method="POST" action="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame">
+        <input type="hidden" name="id" value="0">
+        <button type="submit" name="action" value="restart">Restart</button>
+      </form>
       <script>
-      function handleAction(action) {
-        if (action === 'proceed') {
-          window.location.href = '${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=7';
-        } else if (action === 'restart') {
-          window.location.href = '${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=5';
+        function handleAction(action) {
+          if (action === 'proceed') {
+            window.location.href = '${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=7';
+          } else if (action === 'restart') {
+            window.location.href = '${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=5';
+          }
         }
-      }
-    </script>
-  </head>
-  <body>
-    <button onclick="handleAction('proceed')">Proceed</button>
-    <button onclick="handleAction('restart')">Restart</button>
-  </body>
-    </head></html>`);
+      </script>
+    </head>
+    <body>
+      <button onclick="handleAction('proceed')">Proceed</button>
+      <button onclick="handleAction('restart')">Restart</button>
+    </body>
+    </html>
+    `);
 } else if (idAsNumber === 5) {
     return new NextResponse(`<!DOCTYPE html><html><head>
       <title>This is Wrong</title>
