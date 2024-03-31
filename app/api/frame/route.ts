@@ -37,7 +37,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           </head></html>`);
           } else if(idAsNumber === 4) {
             return new NextResponse(`<!DOCTYPE html><html><head>
-              <title>This is frame ${id}</title>
+              <title>This is frame </title>
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
               <meta property="fc:frame:button:1" content="A" />
@@ -47,7 +47,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
             </head></html>`);
             } else if(idAsNumber === 6) {
               return new NextResponse(`<!DOCTYPE html><html><head>
-                <title>This is frame ${id}</title>
+                <title>This is frame </title>
                 <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
                 <meta property="fc:frame:button:1" content="A" />
                 <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${15}" />
