@@ -7,14 +7,14 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   const nextId = idAsNumber + 1
 
-  if(idAsNumber === 24){
+  if(idAsNumber === 25){
       return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame 7</title>
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmdPQLHKJw6MySDyafxe95AZGSDsfyvBwsQYMvfbWXixxn/7.png" />
-    <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
+    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmdPQLHKJw6MySDyafxe95AZGSDsfyvBwsQYMvfbWXixxn/25.png" />
+    <meta property="fc:frame:button:1" content="CovalentHQ" />
     <meta property="fc:frame:button:1:action" content="post_redirect" />
-    <meta property="fc:frame:button:2" content="Blog post Tutorial" />
+    <meta property="fc:frame:button:2" content="Covalent Docs" />
     <meta property="fc:frame:button:2:action" content="post_redirect" />
     <meta property="fc:frame:button:3" content="Video Tutorial" />
     <meta property="fc:frame:button:3:action" content="post_redirect" />
