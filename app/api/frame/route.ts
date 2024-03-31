@@ -5,30 +5,153 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const id:any = searchParams.get("id")
   const idAsNumber = parseInt(id)
 
-  const nextId = idAsNumber + 1
+  // const nextId = idAsNumber + 2
 
-  if(idAsNumber === 7){
-      return new NextResponse(`<!DOCTYPE html><html><head>
-    <title>This is frame 7</title>
-    <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/7.png" />
-    <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
-    <meta property="fc:frame:button:1:action" content="post_redirect" />
-    <meta property="fc:frame:button:2" content="Blog post Tutorial" />
-    <meta property="fc:frame:button:2:action" content="post_redirect" />
-    <meta property="fc:frame:button:3" content="Video Tutorial" />
-    <meta property="fc:frame:button:3:action" content="post_redirect" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
-  </head></html>`);
-  } else {
+
+  if (idAsNumber === 2) {
+    return new NextResponse(`<!DOCTYPE html><html><head>
+      <title> Know your CQT token </title>
+      <meta property="fc:frame" content="vNext" />
+      <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+      <meta property="fc:frame:button:1" content="A" />
+      <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${7}" />
+      <meta property="fc:frame:button:2" content="B" />
+      <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${5}" />
+    </head></html>`);
+    }
+    else if (idAsNumber === 5) {
+        return new NextResponse(`<!DOCTYPE html><html><head>
+          <title>This is Wrong</title>
+          <meta property="fc:frame" content="vNext" />
+          <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+          <meta property="fc:frame:button:1" content="Retry" />
+          <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${0}" />
+        </head></html>`);
+        } else if(idAsNumber === 7) {
+          return new NextResponse(`<!DOCTYPE html><html><head>
+            <title>This is frame ${id}</title>
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+            <meta property="fc:frame:button:1" content="Next Page" />
+            <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${4}" />
+          </head></html>`);
+          } else if(idAsNumber === 4) {
+            return new NextResponse(`<!DOCTYPE html><html><head>
+              <title>This is frame ${id}</title>
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+              <meta property="fc:frame:button:1" content="A" />
+              <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${6}" />
+              <meta property="fc:frame:button:2" content="B" />
+              <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${5}" />
+            </head></html>`);
+            } else if(idAsNumber === 6) {
+              return new NextResponse(`<!DOCTYPE html><html><head>
+                <title>This is frame ${id}</title>
+                <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+                <meta property="fc:frame:button:1" content="A" />
+                <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${15}" />
+                <meta property="fc:frame:button:2" content="B" />
+                <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${5}" />
+              </head></html>`);
+              }
+
+    else if (idAsNumber === 15) {
+    return new NextResponse(`<!DOCTYPE html><html><head>
+  <title>This is frame 7</title>
+  <meta property="fc:frame" content="vNext" />
+  <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/${idAsNumber}.png" />
+  <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
+  <meta property="fc:frame:button:1:action" content="post_redirect" />
+  <meta property="fc:frame:button:2" content="Blog post Tutorial" />
+  <meta property="fc:frame:button:2:action" content="post_redirect" />
+  <meta property="fc:frame:button:3" content="Video Tutorial" />
+  <meta property="fc:frame:button:3:action" content="post_redirect" />
+  <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
+</head></html>`);
+} else {
   return new NextResponse(`<!DOCTYPE html><html><head>
-    <title>This is frame ${id}</title>
-    <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/${id}.png" />
-    <meta property="fc:frame:button:1" content="Next Page" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
-  </head></html>`);
-  }
+  <title>This is frame 7</title>
+  <meta property="fc:frame" content="vNext" />
+  <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/7.png" />
+  <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
+  <meta property="fc:frame:button:1:action" content="post_redirect" />
+  <meta property="fc:frame:button:2" content="Blog post Tutorial" />
+  <meta property="fc:frame:button:2:action" content="post_redirect" />
+  <meta property="fc:frame:button:3" content="Video Tutorial" />
+  <meta property="fc:frame:button:3:action" content="post_redirect" />
+  <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
+</head></html>`);
+}
+
+
+  // if(idAsNumber === 15){
+  //     return new NextResponse(`<!DOCTYPE html><html><head>
+  //   <title>Congratulations!!!</title>
+  //   <meta property="fc:frame" content="vNext" />
+  //   <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/15.png" />
+  //   <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
+  //   <meta property="fc:frame:button:1:action" content="post_redirect" />
+  //   <meta property="fc:frame:button:2" content="Blog post Tutorial" />
+  //   <meta property="fc:frame:button:2:action" content="post_redirect" />
+  //   <meta property="fc:frame:button:3" content="Video Tutorial" />
+  //   <meta property="fc:frame:button:3:action" content="post_redirect" />
+  //   <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
+  // </head></html>`);
+  // } else if (idAsNumber === 2) {
+  // return new NextResponse(`<!DOCTYPE html><html><head>
+  //   <title> Know your CQT token </title>
+  //   <meta property="fc:frame" content="vNext" />
+  //   <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/${id}.png" />
+  //   <meta property="fc:frame:button:1" content="A" />
+  //   <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${7}" />
+  //   <meta property="fc:frame:button:2" content="B" />
+  //   <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${5}" />
+  // </head></html>`);
+  // } else if (idAsNumber === 5) {
+  //   return new NextResponse(`<!DOCTYPE html><html><head>
+  //     <title>This is Wrong</title>
+  //     <meta property="fc:frame" content="vNext" />
+  //     <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/oops.png" />
+  //     <meta property="fc:frame:button:1" content="Retry" />
+  //     <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${0}" />
+  //   </head></html>`);
+  //   } else if(idAsNumber === 7) {
+  //     return new NextResponse(`<!DOCTYPE html><html><head>
+  //       <title>This is frame ${id}</title>
+  //       <meta property="fc:frame" content="vNext" />
+  //       <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/correct.png" />
+  //       <meta property="fc:frame:button:1" content="Next Page" />
+  //       <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${4}" />
+  //     </head></html>`);
+  //     } else if(idAsNumber === 4) {
+  //       return new NextResponse(`<!DOCTYPE html><html><head>
+  //         <title>This is frame ${id}</title>
+  //         <meta property="fc:frame" content="vNext" />
+  //         <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/${4}.png" />
+  //         <meta property="fc:frame:button:1" content="A" />
+  //         <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${10}" />
+  //         <meta property="fc:frame:button:2" content="B" />
+  //         <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${5}" />
+  //       </head></html>`);
+  //       } else if(idAsNumber === 10) {
+  //         return new NextResponse(`<!DOCTYPE html><html><head>
+  //           <title>This is frame ${id}</title>
+  //           <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/${6}.png" />
+  //           <meta property="fc:frame:button:1" content="A" />
+  //           <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${15}" />
+  //           <meta property="fc:frame:button:2" content="B" />
+  //           <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${5}" />
+  //         </head></html>`);
+  //         }
+  //         else if(idAsNumber === 15)  {
+  //           (`<!DOCTYPE html><html><head>
+  //           <title>This is frame ${id}</title>
+  //           <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/${15}.png" />
+  //           <meta property="fc:frame:button:1" content="The End" />
+  //           <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/correct.png" />
+  //         </head></html>`);
+  //         }
 }
 
 export async function POST(req: NextRequest): Promise<Response> {

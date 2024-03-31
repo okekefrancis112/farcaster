@@ -7,28 +7,39 @@ const frameMetadata = getFrameMetadata({
       label: "Begin"
     }
   ],
-  // image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`,
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/0.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/0.png`,
+  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=2`,
 });
 
+const frameMetadata1 = getFrameMetadata({
+  buttons: [
+    {
+      label: "Restart"
+    }
+  ],
+  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/oops.png`,
+  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=0`,
+});
+
+
 export const metadata: Metadata = {
-  title: 'Cosmic Cowboys',
-  description: 'A frame telling the story of Cosmic Cowboys',
+  title: 'Scavenger Hunt',
+  description: 'A fun game for all Data Alchemist.',
   openGraph: {
-    title: 'Cosmic Cowboys',
-    description: 'A frame telling the story of Cosmic Cowboys',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmbvQp8ffQf8EzfHmFKSvDY6GD4F288P87LVVoYwqCKvQ2/0.png`],
+    title: 'Scavenger Hunt',
+    description: 'A fun game for all Data Alchemist.',
+    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/0.png`],
   },
   other: {
     ...frameMetadata,
+    ...frameMetadata1,
   },
 };
 
 export default function Page() {
   return (
     <>
-      <h1>Cosmic Cowboys</h1>
+      <h1>Scavenger Hunt</h1>
     </>
   );
 }
