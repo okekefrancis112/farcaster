@@ -11,15 +11,15 @@ const frameMetadata = getFrameMetadata({
   post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=2`,
 });
 
-const frameMetadata1 = getFrameMetadata({
-  buttons: [
-    {
-      label: "Restart"
-    }
-  ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/oops.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=0`,
-});
+// const frameMetadata1 = getFrameMetadata({
+//   buttons: [
+//     {
+//       label: "Restart"
+//     }
+//   ],
+//   image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/oops.png`,
+//   post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=0`,
+// });
 
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   other: {
     ...frameMetadata,
-    ...frameMetadata1,
+    // ...frameMetadata1,
   },
 };
 
