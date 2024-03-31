@@ -7,28 +7,17 @@ const frameMetadata = getFrameMetadata({
       label: "Begin"
     }
   ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/0.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=2`,
+  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmdPQLHKJw6MySDyafxe95AZGSDsfyvBwsQYMvfbWXixxn/0.png`,
+  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
 });
-
-const frameMetadata1 = getFrameMetadata({
-  buttons: [
-    {
-      label: "Restart"
-    }
-  ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/5.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=0`,
-});
-
 
 export const metadata: Metadata = {
-  title: 'Scavenger Hunt',
-  description: 'A fun game for all Data Alchemist.',
+  title: 'Covalent Gallery',
+  description: 'Spreading the word, one person at a time.',
   openGraph: {
-    title: 'Scavenger Hunt',
-    description: 'A fun game for all Data Alchemist.',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmT5Lu2hiS9eZ2evhPz3AW4RPw83rT2xUoYYubWUMwXUfu/0.png`],
+    title: 'Covalent Gallery',
+    description: 'Spreading the word, one person at a time..',
+    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmdPQLHKJw6MySDyafxe95AZGSDsfyvBwsQYMvfbWXixxn/0.png`],
   },
   other: {
     ...frameMetadata,
@@ -38,7 +27,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>Scavenger Hunt</h1>
+      <h1>Covalent Gallery</h1>
     </>
   );
 }
